@@ -15,24 +15,22 @@ namespace GraphQlDemo.Data.Models
             Created = created;
             CustomerId = customerId;
             Id = id;
-            Status = OrderStatus.CREATED;
         }
 
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public DateTime Created { get; private set; }
-        public int CustomerId { get; set; }
-        public string Id { get; private set; }
-        public OrderStatus Status { get; set; }
+        public string Name { get; }
+        public string Description { get; }
+        public DateTime Created { get; }
+        public int CustomerId { get; }
+        public string Id { get;  }
     }
 
     [Flags]
     public enum OrderStatus
     {
-        CREATED = 2,
-        PROCESSING = 4,
-        COMPLETED = 8,
-        CANCELLED = 16,
-        CLOSED = 32
+        Created = 2,
+        Processing = 4,
+        Completed = 8,
+        Cancelled = 16,
+        Closed = 32
     }
 }

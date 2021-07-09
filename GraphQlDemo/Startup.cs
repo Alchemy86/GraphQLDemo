@@ -26,8 +26,7 @@ namespace GraphQlDemo
 
             // Enable graphql to get access to services etc that we register
             services.AddSingleton<IDependencyResolver>(
-                c => new FuncDependencyResolver(type =>
-                    c.GetRequiredService(type)));
+                c => new FuncDependencyResolver(c.GetRequiredService));
 
             services.AddGraphQLHttp();
             services.AddGraphQLWebSocket<OrdersSchema>();
